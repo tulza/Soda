@@ -1,0 +1,51 @@
+html {
+  font-family: "Kollektif";
+}
+
+.Broetown {
+  font-family: "Broetown Signature";
+}
+
+.Kollektif {
+  font-family: "Kollektif";
+}
+
+@font-face {
+  font-family: "Kollektif";
+  src: url("./Kollektif.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kollektif Bold";
+  src: url("./Kollektif-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kollektif Bold Italic";
+  src: url("./Kollektif-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Kollektif Italic";
+  src: url("./Kollektif-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Broetown Signature";
+  src: url("./broetown-signature.broetownsignatureregular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.asjd{
+  font-weight: 700;
+}

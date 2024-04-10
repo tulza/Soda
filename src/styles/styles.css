@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+}
+
+html,
+#root {
+  @apply h-[100vh] w-[100vw];
+}
+
+html {
+  background-color: var(--background);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.noise {
+  background: url(/src/assets/svgs/noise.svg);
+  isolation: isolate;
+}
