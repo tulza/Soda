@@ -25,15 +25,19 @@ const Home = () => {
     <LoadTimeContext.Provider value={LoadTime}>
       <div
         className="grid h-dvh w-dvw place-items-center "
+        //@ts-ignore
         style={{ backgroundColor: data[currSoda].BackgroundColor }}
       >
         <div className="ml-[20vw] flex w-full flex-col">
-          {data[currSoda].Label.split(" ").map((label) => (
-            <div className="h-min text-[20vw] leading-[15vw] tracking-wide text-white">
-              <span className="absolute z-50 opacity-40">{label}</span>
-              {label}
-            </div>
-          ))}
+          {
+            //@ts-ignore
+            data[currSoda].Label.split(" ").map((label) => (
+              <div className="h-min text-[20vw] leading-[15vw] tracking-wide text-white">
+                <span className="absolute z-50 opacity-40">{label}</span>
+                {label}
+              </div>
+            ))
+          }
         </div>
 
         <div className="absolute h-full w-full">
@@ -57,7 +61,9 @@ const Home = () => {
           {currSoda}
         </div>
         <SodaDescription
+          //@ts-ignore
           description={data[currSoda].Description}
+          //@ts-ignore
           price={data[currSoda].Price}
         />
         <div className="absolute bottom-5 left-[50%] flex -translate-x-[50%] gap-4 text-white">

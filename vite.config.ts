@@ -4,6 +4,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "https://tulza.github.io/cola/",
+  base: "https://tulza.github.io/Soda/",
   plugins: [react(), tsconfigPaths()],
 });
