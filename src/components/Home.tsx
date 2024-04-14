@@ -30,7 +30,7 @@ const Home = () => {
         <div className="ml-[20vw] flex w-full flex-col">
           {data[currSoda].Label.split(" ").map((label) => (
             <div className="h-min text-[20vw] leading-[15vw] tracking-wide text-white">
-              <span className="absolute z-50 opacity-15">{label}</span>
+              <span className="absolute z-50 opacity-40">{label}</span>
               {label}
             </div>
           ))}
