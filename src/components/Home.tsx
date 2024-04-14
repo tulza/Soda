@@ -60,6 +60,9 @@ const Home = () => {
         <div className="absolute top-10 h-[15%] text-2xl text-white">
           {currSoda}
         </div>
+        <div className="absolute bottom-0 right-0 mr-4 text-base text-white opacity-20">
+          Thanks to Ono for the 3D model
+        </div>
         <SodaDescription
           //@ts-ignore
           description={data[currSoda].Description}
