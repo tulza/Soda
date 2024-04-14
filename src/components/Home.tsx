@@ -32,8 +32,10 @@ const Home = () => {
           {
             //@ts-ignore
             data[currSoda].Label.split(" ").map((label) => (
-              <div className="h-min text-[20vw] leading-[15vw] tracking-wide text-white">
-                <span className="absolute z-50 opacity-40">{label}</span>
+              <div className="pointer-events-none h-min text-[20vw] leading-[15vw] tracking-wide text-white">
+                <span className="pointer-events-none absolute z-50 opacity-40">
+                  {label}
+                </span>
                 {label}
               </div>
             ))
@@ -78,7 +80,7 @@ const Home = () => {
               setState(state - 1);
             }}
           />
-          <div className="grid w-[100px] place-items-center text-3xl">
+          <div className="grid w-[100px] select-none place-items-center text-3xl">
             {state}
           </div>
           <StateButton
