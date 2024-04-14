@@ -1,16 +1,16 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Speen from "./models/Speen";
+import { Camera } from "three";
 
 const Home = () => {
   return (
     <div className="grid h-dvh w-dvw place-items-center bg-red-500">
       <div className="ml-[20vw] flex w-full flex-col">
-        <div className="h-min text-[20vw] leading-[25vw] tracking-wide text-white">
+        <div className="h-min text-[20vw] leading-[15vw] tracking-wide text-white">
           <span className="absolute z-50 opacity-15">Coca</span>Coca
         </div>
-
-        <div className="text-[20vw] leading-[25vw] tracking-wide text-white">
+        <div className="text-[20vw] leading-[15vw] tracking-wide text-white">
           <span className="absolute z-50 opacity-15">Cola</span>Cola
         </div>
       </div>
@@ -30,6 +30,8 @@ const Home = () => {
           <Speen />
         </Canvas>
       </div>
+      <div className="absolute top-0 h-[15%] w-dvw bg-black"></div>
+      <div className="absolute bottom-0 h-[15%] w-dvw bg-black"></div>
       <div className="absolute bottom-[10%] right-[10%] h-[200px] w-[400px] rounded-xl bg-black/50 p-8 tracking-wider text-white outline outline-white">
         <p className="mb-4 text-xl font-bold tracking-wider">
           Description:

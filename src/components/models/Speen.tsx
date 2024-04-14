@@ -13,7 +13,7 @@ const Speen = () => {
   });
   return (
     <>
-      <group position={[0, 0, 0]} ref={ref}>
+      <group position={[0, 0, 0.75]} ref={ref}>
         <group position={[0, -2.5, 0]}>
           <Cola />
         </group>
