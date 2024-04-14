@@ -7,16 +7,18 @@ const Speen = () => {
 
   useFrame(() => {
     if (!ref.current) return;
-    ref.current.rotation.y += 0.01;
+    ref.current.rotation.y += 0.05;
     ref.current.rotation.z = 0.2;
     ref.current.rotation.x = 0;
   });
   return (
-    <group position={[0, 0, 0]} ref={ref}>
-      <group position={[0, -2.5, 0]}>
-        <Cola />
+    <>
+      <group position={[0, 0, 0]} ref={ref}>
+        <group position={[0, -2.5, 0]}>
+          <Cola />
+        </group>
       </group>
-    </group>
+    </>
   );
 };
 
