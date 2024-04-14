@@ -1,0 +1,37 @@
+{
+  "Cola": {
+    "Label": "Coca Cola",
+    "modelLink": "./cola.glb",
+    "Description": "A refreshing beverage",
+    "Price": "2.99",
+    "BackgroundColor": "#ef4444"
+  },
+  "Fanta": {
+    "Label": "Fanta",
+    "modelLink": "./fantanyl.glb",
+    "Description": "Fruit Flavored Sodas",
+    "Price": "3.99",
+    "BackgroundColor": "#f59e0b"
+  },
+  "Sprite": {
+    "Label": "Sprite",
+    "modelLink": "./sprite_espuma.glb",
+    "Description": "lemon-lime flavored soft drink",
+    "Price": "3.99",
+    "BackgroundColor": "#84cc16"
+  },
+  "Pepsi": {
+    "Label": "Pepsi",
+    "modelLink": "./pepsol_espuma.glb",
+    "Description": "Coca cola arch-nemesis",
+    "Price": "3.99",
+    "BackgroundColor": "#60a5fa"
+  },
+  "RyoBeer": {
+    "Label": "It's Ryover",
+    "modelLink": "./grade_A_ryo.glb",
+    "Description": "Nice and Cheap",
+    "Price": "29999.99",
+    "BackgroundColor": "#1d4ed8"
+  }
+}

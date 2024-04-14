@@ -1,6 +1,6 @@
 import { useGLTF } from "@react-three/drei";
 
-const Cola = () => {
+const Soda = () => {
   const cola = useGLTF("./cola.glb");
   return (
     <>
@@ -9,4 +9,4 @@ const Cola = () => {
   );
 };
 
-export default Cola;
+export default Soda;
