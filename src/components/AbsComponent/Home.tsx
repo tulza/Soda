@@ -1,10 +1,12 @@
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import SodaSpin from "./models/SodaSpin";
-import SodaDescription from "./PriceLabel";
+import SodaDescription from "../PriceLabel";
 import { createContext, useContext, useState } from "react";
-import StateButton from "./StateButton";
+import StateButton from "../StateButton";
 import { SodaContext, StateContext } from "@/App";
+import SodaCanvas from "../ThreeJS/SodaCanvas";
+import LetterBoxing from "./LetterBoxing";
+import SodaText from "./SodaText";
+import { label } from "three/examples/jsm/nodes/Nodes.js";
+import CreditsText from "./CreditsText";
 
 export const LoadTimeContext = createContext<number>(1000);
 
@@ -31,40 +33,13 @@ const Home = () => {
         className="flex h-dvh w-dvw items-center"
         style={{ backgroundColor: BackgroundColor }}
       >
-        <div className="ml-[10vw] flex w-min flex-col">
-          {Label.split(" ").map((label: string) => (
-            <div className="pointer-events-none text-[20vw] leading-[15vw] tracking-wide text-white ">
-              <span className="pointer-events-none absolute z-50 opacity-40">
-                {label}
-              </span>
-              {label}
-            </div>
-          ))}
-        </div>
-
-        <div className="absolute h-full w-full">
-          <Canvas className="absolute">
-            <directionalLight
-              position={[3.3, 1.0, 4.4]}
-              intensity={Math.PI * 2}
-            />
-            <directionalLight
-              position={[-3.3, -1.0, -4.4]}
-              intensity={Math.PI * 2}
-            />
-            <ambientLight />
-            <OrbitControls enabled={false} />
-            <SodaSpin state={state} />
-          </Canvas>
-        </div>
-        <div className="absolute top-0 h-[15%] w-dvw bg-black"></div>
-        <div className="absolute bottom-0 h-[15%] w-dvw bg-black"></div>
+        <SodaText Label={Label} />
+        <SodaCanvas state={state} />
+        <LetterBoxing />
         <div className="absolute top-10 w-dvw text-center text-2xl text-white">
           {currSoda}
         </div>
-        <div className="absolute bottom-0 right-0 mr-4 text-base text-white opacity-20">
-          Thanks to Ono for the 3D models
-        </div>
+        <CreditsText />
         <SodaDescription description={Description} price={Price} />
         <div className="absolute bottom-5 left-[50%] flex -translate-x-[50%] gap-4 text-white">
           <StateButton
