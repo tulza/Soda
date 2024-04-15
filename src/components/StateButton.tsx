@@ -13,7 +13,7 @@ const StateButton = ({
   return (
     <motion.div
       className={clsx(
-        "relative grid aspect-square w-[100px] cursor-pointer select-none place-items-center overflow-hidden rounded-full border border-white text-3xl",
+        "relative grid aspect-square w-[75px] cursor-pointer select-none place-items-center overflow-hidden rounded-full border border-white text-3xl sm:w-[100px]",
         `${className}`,
       )}
       onClick={OnClick}

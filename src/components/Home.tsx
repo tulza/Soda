@@ -24,15 +24,15 @@ const Home = () => {
   return (
     <LoadTimeContext.Provider value={LoadTime}>
       <div
-        className="grid h-dvh w-dvw place-items-center "
+        className="flex h-dvh w-dvw items-center"
         //@ts-ignore
         style={{ backgroundColor: data[currSoda].BackgroundColor }}
       >
-        <div className="ml-[20vw] flex w-full flex-col">
+        <div className="ml-[10vw] flex w-min flex-col">
           {
             //@ts-ignore
             data[currSoda].Label.split(" ").map((label) => (
-              <div className="pointer-events-none h-min text-[20vw] leading-[15vw] tracking-wide text-white">
+              <div className="pointer-events-none text-[20vw] leading-[15vw] tracking-wide text-white ">
                 <span className="pointer-events-none absolute z-50 opacity-40">
                   {label}
                 </span>
@@ -59,14 +59,13 @@ const Home = () => {
         </div>
         <div className="absolute top-0 h-[15%] w-dvw bg-black"></div>
         <div className="absolute bottom-0 h-[15%] w-dvw bg-black"></div>
-        <div className="absolute top-10 h-[15%] text-2xl text-white">
+        <div className="absolute top-10 w-dvw text-center text-2xl text-white">
           {currSoda}
         </div>
         <div className="absolute bottom-0 right-0 mr-4 text-base text-white opacity-20">
-          Thanks to Ono for the 3D model
+          Thanks to Ono for the 3D models
         </div>
         <SodaDescription
-          //@ts-ignore
           description={data[currSoda].Description}
           //@ts-ignore
           price={data[currSoda].Price}
