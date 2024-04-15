@@ -14,32 +14,32 @@ const Home = () => {
   const { state, setState } = useContext(StateContext);
   const currSoda = Object.keys(data)[state - 1];
   const maxKey = Object.keys(data).length;
-  const LoadTime = 0; //ms
+  const LoadTime = 2000; //ms
   const handleLoading = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, LoadTime);
   };
+
+  //@ts-ignore
+  const { Label, Description, Price, BackgroundColor } = data[currSoda];
+
   return (
     <LoadTimeContext.Provider value={LoadTime}>
       <div
         className="flex h-dvh w-dvw items-center"
-        //@ts-ignore
-        style={{ backgroundColor: data[currSoda].BackgroundColor }}
+        style={{ backgroundColor: BackgroundColor }}
       >
         <div className="ml-[10vw] flex w-min flex-col">
-          {
-            //@ts-ignore
-            data[currSoda].Label.split(" ").map((label) => (
-              <div className="pointer-events-none text-[20vw] leading-[15vw] tracking-wide text-white ">
-                <span className="pointer-events-none absolute z-50 opacity-40">
-                  {label}
-                </span>
+          {Label.split(" ").map((label: string) => (
+            <div className="pointer-events-none text-[20vw] leading-[15vw] tracking-wide text-white ">
+              <span className="pointer-events-none absolute z-50 opacity-40">
                 {label}
-              </div>
-            ))
-          }
+              </span>
+              {label}
+            </div>
+          ))}
         </div>
 
         <div className="absolute h-full w-full">
@@ -65,11 +65,7 @@ const Home = () => {
         <div className="absolute bottom-0 right-0 mr-4 text-base text-white opacity-20">
           Thanks to Ono for the 3D models
         </div>
-        <SodaDescription
-          description={data[currSoda].Description}
-          //@ts-ignore
-          price={data[currSoda].Price}
-        />
+        <SodaDescription description={Description} price={Price} />
         <div className="absolute bottom-5 left-[50%] flex -translate-x-[50%] gap-4 text-white">
           <StateButton
             label="<"

@@ -7,8 +7,10 @@ const SodaSpin = ({ state }: { state: number }) => {
   const ref = useRef<THREE.Group | null>(null);
   const data = useContext(SodaContext);
   const currSoda = Object.keys(data)[state - 1];
+  // Get data from JSON
   //@ts-ignore
-  const soda = useGLTF(data[currSoda].modelLink);
+  const {modelLink} = data[currSoda];
+  const soda = useGLTF(modelLink);
   console.log(currSoda);
 
   useFrame(() => {
