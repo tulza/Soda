@@ -3,7 +3,6 @@ import "@styles/fonts.css";
 import Home from "@components/Home";
 import { createContext, useState } from "react";
 import data from "./data.json";
-import { SodaData } from "./types/sodaData";
 
 export const SodaContext = createContext(data);
 export const StateContext = createContext<any>(null);

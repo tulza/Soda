@@ -1,5 +1,3 @@
-import React from "react";
-
 const SodaText = ({ Label }: { Label: string }) => {
   return (
     <div className="flex w-min flex-col pl-[10vw]">
