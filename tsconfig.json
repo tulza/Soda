@@ -10,6 +10,7 @@
       "@images/*": ["./src/asset/images/*"],
       "@svgs/*": ["./src/asset/svgs/*"],
       "@pages/*": ["./src/components/pages/*"],
+      "@absc/*": ["./src/components/AbsComponent/*"],
       "@hook/*": ["./src/components/hook/*"],
       "@cursor/*": ["./src/components/Cursor/*"],
       "@components/*": ["./src/components/*"],

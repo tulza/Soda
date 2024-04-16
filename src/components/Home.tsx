@@ -1,12 +1,12 @@
-import SodaDescription from "../PriceLabel";
 import { createContext, useContext, useState } from "react";
-import StateButton from "../StateButton";
+
 import { SodaContext, StateContext } from "@/App";
-import SodaCanvas from "../ThreeJS/SodaCanvas";
-import LetterBoxing from "./LetterBoxing";
-import SodaText from "./SodaText";
-import { label } from "three/examples/jsm/nodes/Nodes.js";
-import CreditsText from "./CreditsText";
+import SodaDescription from "./PriceLabel";
+import StateButton from "./StateButton";
+import SodaCanvas from "./ThreeJS/SodaCanvas";
+import LetterBoxing from "./AbsComponent/LetterBoxing";
+import SodaText from "./AbsComponent/SodaText";
+import CreditsText from "./AbsComponent/CreditsText";
 
 export const LoadTimeContext = createContext<number>(1000);
 

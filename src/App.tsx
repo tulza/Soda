@@ -1,6 +1,6 @@
 import "@styles/styles.css";
 import "@styles/fonts.css";
-import Home from "@components/AbsComponent/Home";
+import Home from "@components/Home";
 import { createContext, useState } from "react";
 import data from "./data.json";
 import { SodaData } from "./types/sodaData";
