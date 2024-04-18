@@ -9,9 +9,8 @@ const SodaSpin = ({ state }: { state: number }) => {
   const currSoda = Object.keys(data)[state - 1];
   // Get data from JSON
   //@ts-ignore
-  const {modelLink} = data[currSoda];
+  const { modelLink } = data[currSoda];
   const soda = useGLTF(modelLink);
-  console.log(currSoda);
 
   useFrame(() => {
     if (!ref.current) return;

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { SodaContext, StateContext } from "@/App";
 import SodaDescription from "./PriceLabel";
@@ -7,6 +7,7 @@ import SodaCanvas from "./ThreeJS/SodaCanvas";
 import LetterBoxing from "./AbsComponent/LetterBoxing";
 import SodaText from "./AbsComponent/SodaText";
 import CreditsText from "./AbsComponent/CreditsText";
+import { motion } from "framer-motion";
 
 export const LoadTimeContext = createContext<number>(1000);
 
@@ -16,7 +17,7 @@ const Home = () => {
   const { state, setState } = useContext(StateContext);
   const currSoda = Object.keys(data)[state - 1];
   const maxKey = Object.keys(data).length;
-  const LoadTime = 2000; //ms
+  const LoadTime = 0; //ms
   const handleLoading = () => {
     setLoading(true);
     setTimeout(() => {
@@ -26,13 +27,17 @@ const Home = () => {
 
   //@ts-ignore
   const { Label, Description, Price, BackgroundColor } = data[currSoda];
+  useEffect(() => {
+    document.documentElement.style.setProperty("--bg", BackgroundColor);
+  }, [currSoda]);
 
   return (
     <LoadTimeContext.Provider value={LoadTime}>
-      <div
-        className="flex h-dvh w-dvw items-center"
-        style={{ backgroundColor: BackgroundColor }}
-      >
+      <div className="flex h-dvh w-dvw items-center bg-transparent">
+        <div
+          className="absolute -z-10 h-dvh w-dvw bg-black"
+          style={{ backgroundColor: BackgroundColor }}
+        ></div>
         <SodaText Label={Label} />
         <SodaCanvas state={state} />
         <LetterBoxing />
