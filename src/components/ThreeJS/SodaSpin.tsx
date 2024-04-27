@@ -1,5 +1,5 @@
-import { useFrame } from "@react-three/fiber";
-import { useContext, useRef } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useContext, useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 import { SodaContext } from "@/App";
 import { useGLTF } from "@react-three/drei";

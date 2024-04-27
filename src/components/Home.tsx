@@ -7,7 +7,7 @@ import SodaCanvas from "./ThreeJS/SodaCanvas";
 import LetterBoxing from "./AbsComponent/LetterBoxing";
 import SodaText from "./AbsComponent/SodaText";
 import CreditsText from "./AbsComponent/CreditsText";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const LoadTimeContext = createContext<number>(1000);
 
@@ -33,11 +33,18 @@ const Home = () => {
 
   return (
     <LoadTimeContext.Provider value={LoadTime}>
-      <div className="flex h-dvh w-dvw items-center bg-transparent">
-        <div
-          className="absolute -z-10 h-dvh w-dvw bg-black"
-          style={{ backgroundColor: BackgroundColor }}
-        ></div>
+      <div className="flex h-dvh w-dvw items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="absolute h-full w-full "
+            style={{ background: BackgroundColor }}
+            initial={{ scaleX: 1 }}
+            animate={{ scaleX: 0 }}
+            exit={{ scaleX: 0 }}
+            transition={{ duration: 1 }}
+            key={BackgroundColor}
+          ></motion.div>
+        </AnimatePresence>
         <SodaText Label={Label} />
         <SodaCanvas state={state} />
         <LetterBoxing />

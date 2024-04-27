@@ -12,8 +12,7 @@ html,
 }
 
 html {
-  @apply transition-colors;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   overflow: hidden;
 }
